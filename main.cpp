@@ -1,4 +1,5 @@
 #include <iostream>
+#include<algorithm>
 using namespace std;
 void selection(int* a,int n)
 {
@@ -61,6 +62,10 @@ void insertion(int* a,int n)
         a[j+1]=num;
     }
 }
+bool compare(int a,int b)
+{
+     return a>b;
+}
 int main()
 {
     int a[1000],n;
@@ -74,6 +79,12 @@ int main()
     selection(a,n);
     bubble(a,n);
     insertion(a,n);
+    //Sorting array using C++ STL(Standard Template Library)
+    //Sorting in ascending order
+    sort(a,a+n);
+    //Sorting array using C++ STL(Standard Template Library) using comparator function
+    //Sorting in descending order
+    sort(a,a+n,compare);
     for(int i=0;i<n;i++)
     {
         cout<<a[i]<<",";
